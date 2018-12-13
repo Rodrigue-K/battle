@@ -4,7 +4,12 @@ require 'sinatra/base'
 class Battle < Sinatra::Base
   # Defining route
   get '/' do
-    'Testing infrastructure working!'
+    # 'Testing infrastructure working!'
+    erb(:index)
+  end
+
+  post '/names' do
+    @name = params[:name]
   end
 
   # run! starts a server.
