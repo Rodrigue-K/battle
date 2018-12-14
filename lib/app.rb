@@ -20,6 +20,19 @@ class Battle < Sinatra::Base
     @player_2_name = session[:player_2_name]
     erb(:play)
   end
+
+  get '/p1_attacks' do
+    @player_1_name = session[:player_1_name]
+    @player_2_name = session[:player_2_name]
+    erb(:p1_attacks)
+  end    
+
+  get '/p2_attacks' do
+    @player_1_name = session[:player_1_name]
+    @player_2_name = session[:player_2_name]
+    erb(:p2_attacks)
+  end    
+
   # run! starts a server.
   # Only start a server if the file has been executed directly with __FILE__
   # being the current file and $0 being the executed file.

@@ -75,11 +75,10 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  rack
   rspec
   rubocop
   selenium-webdriver
   sinatra
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
