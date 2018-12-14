@@ -11,5 +11,4 @@ feature 'attack' do
     expect(page).to have_content 'Banana attacked Joe Jo'
   end
 
-
 end

@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'player'
+require_relative 'player'
 
 # Creating our own subclass of Sinatra::Base - Modular application style.
 class Battle < Sinatra::Base
@@ -19,18 +19,22 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
+    @player_1_HP = $player_1.hit_points
+    @player_2_HP = $player_2.hit_points
     erb(:play)
   end
 
   get '/p1_attacks' do
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
+    $player_2.attacked
     erb(:p1_attacks)
   end
 
   get '/p2_attacks' do
     @player_1_name = $player_1.name
     @player_2_name = $player_2.name
+    $player_1.attacked
     erb(:p2_attacks)
   end
 
