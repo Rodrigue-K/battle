@@ -9,7 +9,9 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    @name = params[:name]
+    @player_1_name = params[:player_1_name]
+    @player_2_name = params[:player_2_name]
+    erb(:play)
   end
 
   # run! starts a server.
